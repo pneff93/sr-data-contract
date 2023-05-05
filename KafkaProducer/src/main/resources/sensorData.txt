@@ -1,0 +1,15 @@
+{"sensorId": "sensor_1", "type": "temperature", "value": 66.5, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 68.4, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 67.8, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 70.7, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 68.4, "unit": "Fahrenheit"}
+{"sensorId": "sensor_2", "type": "temperature", "value": 69, "unit": "Fahrenheit"}
+{"sensorId": "sensor_2", "type": "temperature", "value": 66.3, "unit": "Fahrenheit"}
+{"sensorId": "sensor_2", "type": "temperature", "value": 70.1, "unit": "Fahrenheit"}
+{"sensorId": "sensor_2", "type": "temperature", "value": 65.5, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 66.9, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 68.3, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 68.3, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 67.4, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 70.2, "unit": "Fahrenheit"}
+{"sensorId": "sensor_1", "type": "temperature", "value": 68.4, "unit": "Fahrenheit"}
