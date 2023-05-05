@@ -12,8 +12,6 @@ class ProducerProperties {
         settings.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
         settings.setProperty("schema.registry.url", "http://schema-registry:8081")
 
-        settings.setProperty(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, "io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor")
-
         // Data Contracts, started in 7.4
         // Validation
         settings.setProperty("rule.executors", "checkSensor")
@@ -25,11 +23,11 @@ class ProducerProperties {
         settings.setProperty("rule.actions.checkSensor.param.topic", "dlq-topic")
         settings.setProperty("rule.actions.checkSensor.param.bootstrap.servers", "localhost:9092")
 
-        // required since we manually create schemas
+        // Required since we manually create schemas
         settings.setProperty("use.latest.version", "true")
         settings.setProperty("auto.register.schemas","false")
 
-        // to produce the key to the DLQ
+        // Required to produce the key to the DLQ
         settings.setProperty("key.serializer", "io.confluent.kafka.serializers.WrapperKeySerializer")
         settings.setProperty("wrapped.key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
 

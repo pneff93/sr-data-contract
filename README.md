@@ -1,7 +1,5 @@
 # CP Data Contract
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 [Data Contract Documentation](https://docs.confluent.io/platform/current/schema-registry/fundamentals/data-contracts.html)
 
 # Set up environment
@@ -10,6 +8,7 @@ docker-compose up -d
 ```
 
 # Register Schema with Rules
+We register a schema with a defined rule:
 
 ```shell
 curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
@@ -47,13 +46,8 @@ curl -X GET http://localhost:8081/schemas | jq
 ```shell
  ./gradlew run  
 ```
-
-The first 5 records pass the rule and are sent to the sensor-data-raw topic.
-The second 5 records fail and are sent to the dlq-topic.
+The producer produces events continuously. The first 5 records pass the rule and are sent to the sensor-data-raw topic. The second 5 records fail and are sent to the dlq-topic.
 
 Check C3 under `localhost:9091`.
 However, C3 only displays the schema fields not the rules etc. (yet)
 
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/patrick-neff-7bb3b21a4/
