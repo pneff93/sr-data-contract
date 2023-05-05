@@ -1,14 +1,13 @@
-# CP Data Contract
-
-[![LinkedIn][linkedin-shield]][linkedin-url]
+# CC Data Contract
 
 [Data Contract Documentation](https://docs.confluent.io/platform/current/schema-registry/fundamentals/data-contracts.html)
 
-
 # Register Schema with Rules
 
+We register a schema with a defined rule:
+
 ```shell
-curl --request POST --url 'https://psrc-4kk0p.westeurope.azure.confluent.cloud/subjects/sensor-data-raw-value/versions'   \
+curl --request POST --url 'https://psrc-00000.region.provider.confluent.cloud/subjects/sensor-data-raw-value/versions'   \
   --header 'Authorization: Basic REPLACE_BASIC_AUTH' \
   --header 'content-type: application/octet-stream' \
   --data '{
@@ -38,12 +37,18 @@ curl --request POST --url 'https://psrc-4kk0p.westeurope.azure.confluent.cloud/s
 ## Check Schemas
 ```shell
 curl --request GET \
-  --url 'https://psrc-4kk0p.westeurope.azure.confluent.cloud/schemas/ids/23' \
+  --url 'https://psrc-00000.region.provider.confluent.cloud/subjects/sensor-data-raw-value/versions/latest' \
   --header 'Authorization: Basic REPLACE_BASIC_AUTH' \ | jq
 ```
 
-## Findings
-The SR in CC is able to work with Data Contracts but the UI is not able to display it.
+## Run
 
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/patrick-neff-7bb3b21a4/
+Ensure to create the topics sensor-data-raw and dlq-topic in CC in advance.
+
+```
+./gradlew run
+```
+The producer produces events continuously.
+The first 5 records pass the rule and are sent to the sensor-data-raw topic. The second 5 records fail and are sent to the dlq-topic.
+
+The SR in CC is able to work with Data Contracts but the UI is not able to display it.

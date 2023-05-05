@@ -16,12 +16,6 @@ class KafkaProducer {
     private val logger = logger(javaClass.name)
     private val gson = Gson()
 
-    fun createTopic(properties: ProducerProperties) {
-
-        val client = KafkaAdminClient.create(properties.configureProperties())
-        client.createTopics(listOf(NewTopic("sensor-data-raw", 1, 1)))
-    }
-
     fun produceEvents(properties: ProducerProperties, data: List<String>): Thread {
 
         val thread = Thread {
